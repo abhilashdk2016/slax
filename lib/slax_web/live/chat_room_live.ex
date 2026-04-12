@@ -14,6 +14,7 @@ defmodule SlaxWeb.ChatRoomLive do
     {:noreply, update(socket, :hide_topic?, &(!&1))}
   end
 
+  @spec render(any()) :: Phoenix.LiveView.Rendered.t()
   def render(assigns) do
     ~H"""
     <Layouts.app flash={@flash}>
