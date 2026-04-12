@@ -1,16 +1,38 @@
 defmodule SlaxWeb.ChatRoomLive do
   use SlaxWeb, :live_view
 
+  alias Slax.Chat.Room
+  alias Slax.Repo
+
   def mount(_params, _session, socket) do
-    {:ok, socket}
+    room = Room |> Repo.all() |> List.first()
+    IO.puts(room)
+    {:ok, assign(socket, hide_topic?: false, room: room)}
+  end
+
+  def handle_event("toggle-topic", _value, socket) do
+    {:noreply, update(socket, :hide_topic?, &(!&1))}
   end
 
   def render(assigns) do
     ~H"""
     <Layouts.app flash={@flash}>
-      <div class="chat-room">
-        <h1>Welcome to the Chat Room!</h1>
-        <p>This is a simple chat room live view.</p>
+      <div class="flex flex-col grow shadow-lg">
+        <div class="flex justify-between items-center shrink-0 h-16 bg-white border-b border-slate-300 px-4">
+          <div class="flex flex-col gap-1.5">
+            <h1 class="text-sm font-bold leading-none">#{@room.name}</h1>
+            <div
+              class={["text-xs leading-none h-3.5", @hide_topic? && "text-slate-600"]}
+              phx-click="toggle-topic"
+            >
+              <%= if @hide_topic? do %>
+                [Topic hidden]
+              <% else %>
+                {@room.topic}
+              <% end %>
+            </div>
+          </div>
+        </div>
       </div>
     </Layouts.app>
     """

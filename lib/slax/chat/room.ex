@@ -16,3 +16,9 @@ defmodule Slax.Chat.Room do
     |> validate_required([:name, :topic])
   end
 end
+
+defimpl String.Chars, for: Slax.Chat.Room do
+  def to_string(room) do
+    room.name
+  end
+end

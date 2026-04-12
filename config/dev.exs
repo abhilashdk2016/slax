@@ -2,6 +2,7 @@ import Config
 
 # Configure your database
 config :slax, Slax.Repo,
+  username: "abhilashdk",
   hostname: "localhost",
   database: "slax_dev",
   stacktrace: true,
