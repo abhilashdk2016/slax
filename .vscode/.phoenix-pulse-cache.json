@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "timestamp": 1775712980131,
+  "timestamp": 1775984886153,
   "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax",
   "registries": {
     "components": {
@@ -595,13 +595,26 @@
           ]
         ],
         [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+          [
+            {
+              "name": "render",
+              "moduleName": "SlaxWeb.ChatRoomLive",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+              "line": 18,
+              "attributes": [],
+              "slots": []
+            }
+          ]
+        ],
+        [
           "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
           [
             {
               "name": "theme_toggle",
               "moduleName": "SlaxWeb.Layouts",
               "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
-              "line": 123,
+              "line": 94,
               "attributes": [],
               "slots": []
             },
@@ -609,7 +622,7 @@
               "name": "flash_group",
               "moduleName": "SlaxWeb.Layouts",
               "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
-              "line": 85,
+              "line": 56,
               "attributes": [
                 {
                   "name": "id",
@@ -672,40 +685,156 @@
       ],
       "fileHashes": {
         "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex": "96552fd71bc1a36e74fd6e45e4f4869a3e6c77ad",
-        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex": "fb1228dce3208587d22cc7136409b5798901af14",
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex": "90fa0c066984de7b3d4bda76f31664d89fc85d2a",
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex": "b8ea35f102ac3343d695365b905e47e7fefea978",
         "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/error_html.ex": "14d21a2142f4cc807af88670ac62741c52204ab0",
         "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html.ex": "93ccc21880f492ab876ae4fdf5930d35e105940f"
       },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
     "schemas": {
-      "schemas": [],
-      "schemasByFile": [],
-      "fileHashes": {},
+      "schemas": [
+        [
+          "Slax.Chat.Room",
+          {
+            "moduleName": "Slax.Chat.Room",
+            "tableName": "rooms",
+            "fields": [
+              {
+                "name": "id",
+                "type": "id"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "topic",
+                "type": "string"
+              },
+              {
+                "name": "inserted_at",
+                "type": "naive_datetime"
+              },
+              {
+                "name": "updated_at",
+                "type": "naive_datetime"
+              }
+            ],
+            "associations": {},
+            "associationsDetailed": [],
+            "aliases": {},
+            "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex",
+            "line": 5
+          }
+        ]
+      ],
+      "schemasByFile": [
+        [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex",
+          [
+            {
+              "moduleName": "Slax.Chat.Room",
+              "tableName": "rooms",
+              "fields": [
+                {
+                  "name": "id",
+                  "type": "id"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                },
+                {
+                  "name": "topic",
+                  "type": "string"
+                },
+                {
+                  "name": "inserted_at",
+                  "type": "naive_datetime"
+                },
+                {
+                  "name": "updated_at",
+                  "type": "naive_datetime"
+                }
+              ],
+              "associations": {},
+              "associationsDetailed": [],
+              "aliases": {},
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex",
+              "line": 5
+            }
+          ]
+        ]
+      ],
+      "fileHashes": {
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex": "46e80ba9f2360d1200f5a501fc86ac309bb08b81"
+      },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
     "events": {
-      "events": [],
-      "fileHashes": {},
+      "events": [
+        [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+          [
+            {
+              "name": "toggle-topic",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+              "moduleName": "SlaxWeb.ChatRoomLive",
+              "line": 13,
+              "params": "_value",
+              "kind": "handle_event",
+              "clause": "def handle_event(\"toggle-topic\", _value, socket) do",
+              "nameKind": "string"
+            }
+          ]
+        ]
+      ],
+      "fileHashes": {
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex": "90fa0c066984de7b3d4bda76f31664d89fc85d2a"
+      },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
     "routes": {
       "routes": [
         {
-          "path": "/",
           "verb": "GET",
+          "path": "/home",
           "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex",
           "line": 20,
+          "controller": "PageController",
+          "action": "home",
+          "helperBase": "home",
+          "params": [],
+          "isResource": false,
+          "pipeline": "browser"
+        },
+        {
+          "verb": "LIVE",
+          "path": "/",
+          "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex",
+          "line": 21,
+          "liveModule": "ChatRoomLive",
           "helperBase": "root",
           "params": [],
           "isResource": false,
-          "controller": "PageController",
-          "action": "home",
-          "scopePath": "/"
+          "pipeline": "browser"
+        },
+        {
+          "verb": "FORWARD",
+          "path": "/dev/mailbox",
+          "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex",
+          "line": 42,
+          "forwardTo": "Plug.Swoosh.MailboxPreview",
+          "helperBase": "mailbox",
+          "params": [],
+          "isResource": false,
+          "pipeline": "browser",
+          "scopePath": "/dev"
         }
       ],
       "fileHashes": {
-        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex": "8650b64a37ed37b2ad237320dfe8350a40fef90c"
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex": "07676938d38a40cafa76390d569290dd6612829c"
       },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
@@ -765,6 +894,17 @@
               "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html/home.html.heex"
             }
           ]
+        ],
+        [
+          "SlaxWeb.ChatRoomLive",
+          [
+            {
+              "moduleName": "SlaxWeb.ChatRoomLive",
+              "name": "render",
+              "format": "html",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex#render"
+            }
+          ]
         ]
       ],
       "templatesByPath": [
@@ -776,22 +916,67 @@
             "format": "html",
             "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html/home.html.heex"
           }
+        ],
+        [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex#render",
+          {
+            "moduleName": "SlaxWeb.ChatRoomLive",
+            "name": "render",
+            "format": "html",
+            "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex#render"
+          }
         ]
       ],
       "moduleByFile": [
         [
           "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html.ex",
           "SlaxWeb.PageHTML"
+        ],
+        [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+          "SlaxWeb.ChatRoomLive"
         ]
       ],
       "fileHashes": {
-        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html.ex": "93ccc21880f492ab876ae4fdf5930d35e105940f"
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html.ex": "93ccc21880f492ab876ae4fdf5930d35e105940f",
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex": "90fa0c066984de7b3d4bda76f31664d89fc85d2a"
       },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
     "liveview": {
-      "liveViews": [],
-      "fileHashes": {},
+      "liveViews": [
+        [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+          {
+            "module": "SlaxWeb.ChatRoomLive",
+            "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+            "functions": [
+              {
+                "line": 18,
+                "name": "render",
+                "type": "render",
+                "module_name": "SlaxWeb.ChatRoomLive"
+              },
+              {
+                "line": 13,
+                "name": "toggle-topic",
+                "type": "handle_event",
+                "module_name": "SlaxWeb.ChatRoomLive",
+                "event_name": "toggle-topic"
+              },
+              {
+                "line": 7,
+                "name": "mount",
+                "type": "mount",
+                "module_name": "SlaxWeb.ChatRoomLive"
+              }
+            ]
+          }
+        ]
+      ],
+      "fileHashes": {
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex": "90fa0c066984de7b3d4bda76f31664d89fc85d2a"
+      },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     }
   },
