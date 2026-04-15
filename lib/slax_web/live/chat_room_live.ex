@@ -2,18 +2,21 @@ defmodule SlaxWeb.ChatRoomLive do
   use SlaxWeb, :live_view
 
   alias Slax.Chat.Room
-  alias Slax.Repo
+  alias Slax.Chat
 
-  def mount(params, _session, socket) do
-    rooms = Repo.all(Room)
+  def mount(_params, _session, socket) do
+    rooms = Chat.list_rooms()
+    {:ok, assign(socket, rooms: rooms)}
+  end
 
+  def handle_params(params, _uri, socket) do
     room =
       case Map.fetch(params, "id") do
-        {:ok, id} -> Repo.get!(Room, id)
-        :error -> List.first(rooms)
+        {:ok, id} -> Chat.get_room!(id)
+        :error -> List.first(socket.assigns.rooms)
       end
 
-    {:ok, assign(socket, hide_topic?: false, room: room, rooms: rooms)}
+    {:noreply, assign(socket, room: room, hide_topic?: false, page_title: "#" <> room.name)}
   end
 
   def handle_event("toggle-topic", _value, socket) do
@@ -25,18 +28,18 @@ defmodule SlaxWeb.ChatRoomLive do
 
   defp room_link(assigns) do
     ~H"""
-    <a
+    <.link
       class={[
         "flex items-center h-8 text-sm pl-8 pr-3",
         (@active && "bg-slate-300") || "hover:bg-slate-300"
       ]}
-      href={~p"/rooms/#{@room.id}"}
+      navigate={~p"/rooms/#{@room.id}"}
     >
       <.icon name="hero-hashtag" class="h-4 w-4" />
       <span class={["ml-2 leading-none", @active && "font-bold"]}>
         {@room.name}
       </span>
-    </a>
+    </.link>
     """
   end
 
@@ -64,7 +67,15 @@ defmodule SlaxWeb.ChatRoomLive do
       <div class="flex flex-col grow shadow-lg">
         <div class="flex justify-between items-center shrink-0 h-16 bg-white border-b border-slate-300 px-4">
           <div class="flex flex-col gap-1.5">
-            <h1 class="text-sm font-bold leading-none">#{@room.name}</h1>
+            <h1 class="text-sm font-bold leading-none">
+              #{@room.name}
+              <.link
+                class="font-normal text-xs text-blue-600 hover:text-blue-700"
+                navigate={~p"/rooms/#{@room}/edit"}
+              >
+                Edit
+              </.link>
+            </h1>
             <div
               class={["text-xs leading-none h-3.5", @hide_topic? && "text-slate-600"]}
               phx-click="toggle-topic"
@@ -76,6 +87,17 @@ defmodule SlaxWeb.ChatRoomLive do
               <% end %>
             </div>
           </div>
+          <ul class="menu menu-horizontal w-full relative z-10 flex items-center gap-4 px-4 sm:px-6 lg:px-8 justify-end">
+            <li>
+              {@current_scope.user.email}
+            </li>
+            <li>
+              <.link href={~p"/users/settings"}>Settings</.link>
+            </li>
+            <li>
+              <.link href={~p"/users/log-out"} method="delete">Log out</.link>
+            </li>
+          </ul>
         </div>
       </div>
     </Layouts.app>
