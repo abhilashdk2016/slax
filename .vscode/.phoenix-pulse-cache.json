@@ -1,6 +1,6 @@
 {
   "version": "1.0.0",
-  "timestamp": 1779015120777,
+  "timestamp": 1779212584345,
   "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax",
   "registries": {
     "components": {
@@ -259,26 +259,233 @@
           "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
           [
             {
-              "name": "icon",
+              "name": "flash",
               "moduleName": "SlaxWeb.CoreComponents",
               "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
-              "line": 442,
+              "line": 50,
               "attributes": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "rawType": ":string",
+                  "required": false,
+                  "doc": "the optional id of flash container"
+                },
+                {
+                  "name": "flash",
+                  "type": "map",
+                  "rawType": ":map",
+                  "required": false,
+                  "default": "%{}",
+                  "doc": "the map of flash messages to display"
+                },
+                {
+                  "name": "title",
+                  "type": "string",
+                  "rawType": ":string",
+                  "required": false,
+                  "default": "nil"
+                },
+                {
+                  "name": "kind",
+                  "type": "atom",
+                  "rawType": ":atom",
+                  "required": false,
+                  "values": [
+                    "info",
+                    "error"
+                  ],
+                  "doc": "used for styling and flash lookup"
+                },
+                {
+                  "name": "rest",
+                  "type": "global",
+                  "rawType": ":global",
+                  "required": false,
+                  "doc": "the arbitrary HTML attributes to add to the flash container"
+                }
+              ],
+              "slots": [
+                {
+                  "name": "inner_block",
+                  "required": false,
+                  "attributes": [],
+                  "doc": "the optional inner block that renders the flash message"
+                }
+              ]
+            },
+            {
+              "name": "button",
+              "moduleName": "SlaxWeb.CoreComponents",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
+              "line": 96,
+              "attributes": [
+                {
+                  "name": "rest",
+                  "type": "global",
+                  "rawType": ":global",
+                  "required": false
+                },
                 {
                   "name": "class",
                   "type": "any",
-                  "required": false,
-                  "default": "\"size-4\"",
-                  "rawType": "any"
+                  "rawType": ":any",
+                  "required": false
                 },
                 {
-                  "name": "name",
+                  "name": "variant",
                   "type": "string",
+                  "rawType": ":string",
+                  "required": false
+                }
+              ],
+              "slots": [
+                {
+                  "name": "inner_block",
                   "required": true,
-                  "rawType": "string"
+                  "attributes": []
+                }
+              ]
+            },
+            {
+              "name": "input",
+              "moduleName": "SlaxWeb.CoreComponents",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
+              "line": 195,
+              "attributes": [
+                {
+                  "name": "options",
+                  "type": "list",
+                  "rawType": ":list",
+                  "required": false,
+                  "doc": "the options to pass to Phoenix.HTML.Form.options_for_select/2"
+                },
+                {
+                  "name": "multiple",
+                  "type": "boolean",
+                  "rawType": ":boolean",
+                  "required": false,
+                  "default": "false",
+                  "doc": "the multiple flag for select inputs"
+                },
+                {
+                  "name": "class",
+                  "type": "any",
+                  "rawType": ":any",
+                  "required": false,
+                  "default": "nil",
+                  "doc": "the input class to use over defaults"
+                },
+                {
+                  "name": "error_class",
+                  "type": "any",
+                  "rawType": ":any",
+                  "required": false,
+                  "default": "nil",
+                  "doc": "the input error class to use over defaults"
+                },
+                {
+                  "name": "rest",
+                  "type": "global",
+                  "rawType": ":global",
+                  "required": false
                 }
               ],
               "slots": []
+            },
+            {
+              "name": "error",
+              "moduleName": "SlaxWeb.CoreComponents",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
+              "line": 299,
+              "attributes": [],
+              "slots": []
+            },
+            {
+              "name": "header",
+              "moduleName": "SlaxWeb.CoreComponents",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
+              "line": 315,
+              "attributes": [],
+              "slots": [
+                {
+                  "name": "inner_block",
+                  "required": true,
+                  "attributes": []
+                },
+                {
+                  "name": "subtitle",
+                  "required": false,
+                  "attributes": []
+                },
+                {
+                  "name": "actions",
+                  "required": false,
+                  "attributes": []
+                }
+              ]
+            },
+            {
+              "name": "table",
+              "moduleName": "SlaxWeb.CoreComponents",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
+              "line": 356,
+              "attributes": [
+                {
+                  "name": "id",
+                  "type": "string",
+                  "rawType": ":string",
+                  "required": true
+                },
+                {
+                  "name": "rows",
+                  "type": "list",
+                  "rawType": ":list",
+                  "required": true
+                },
+                {
+                  "name": "row_id",
+                  "type": "any",
+                  "rawType": ":any",
+                  "required": false,
+                  "default": "nil",
+                  "doc": "the function for generating the row id"
+                },
+                {
+                  "name": "row_click",
+                  "type": "any",
+                  "rawType": ":any",
+                  "required": false,
+                  "default": "nil",
+                  "doc": "the function for handling phx-click on each row"
+                },
+                {
+                  "name": "row_item",
+                  "type": "any",
+                  "rawType": ":any",
+                  "required": false
+                }
+              ],
+              "slots": [
+                {
+                  "name": "col",
+                  "required": true,
+                  "attributes": [
+                    {
+                      "name": "label",
+                      "type": "string",
+                      "rawType": ":string",
+                      "required": false
+                    }
+                  ]
+                },
+                {
+                  "name": "action",
+                  "required": false,
+                  "attributes": [],
+                  "doc": "the slot for showing user actions in the last table column"
+                }
+              ]
             },
             {
               "name": "list",
@@ -292,12 +499,9 @@
                   "required": true,
                   "attributes": [
                     {
-                      "default": null,
-                      "line": 405,
                       "name": "title",
                       "type": "string",
-                      "values": null,
-                      "doc": null,
+                      "rawType": ":string",
                       "required": true
                     }
                   ]
@@ -305,292 +509,26 @@
               ]
             },
             {
-              "name": "table",
+              "name": "icon",
               "moduleName": "SlaxWeb.CoreComponents",
               "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
-              "line": 356,
+              "line": 442,
               "attributes": [
                 {
-                  "name": "row_item",
-                  "type": "any",
-                  "required": false,
-                  "default": "{:&, [line: 347, column: 14], [{:/, [line: 347, column: 32], [{{:., [line: 347, column: 23], [{:__aliases__, [last: [line: 347, column: 15], line: 347, column: 15], [:Function]}, :identity]}, [no_parens: true, line: 347, column: 24], []}, 1]}]}",
-                  "doc": "the function for mapping each row before calling the :col and :action slots",
-                  "rawType": "any"
-                },
-                {
-                  "name": "row_click",
-                  "type": "any",
-                  "required": false,
-                  "default": "nil",
-                  "doc": "the function for handling phx-click on each row",
-                  "rawType": "any"
-                },
-                {
-                  "name": "row_id",
-                  "type": "any",
-                  "required": false,
-                  "default": "nil",
-                  "doc": "the function for generating the row id",
-                  "rawType": "any"
-                },
-                {
-                  "name": "rows",
-                  "type": "list",
-                  "required": true,
-                  "rawType": "list"
-                },
-                {
-                  "name": "id",
+                  "name": "name",
                   "type": "string",
-                  "required": true,
-                  "rawType": "string"
-                }
-              ],
-              "slots": [
-                {
-                  "name": "action",
-                  "required": false,
-                  "doc": "the slot for showing user actions in the last table column",
-                  "attributes": []
-                },
-                {
-                  "name": "col",
-                  "required": true,
-                  "attributes": [
-                    {
-                      "default": null,
-                      "line": 351,
-                      "name": "label",
-                      "type": "string",
-                      "values": null,
-                      "doc": null,
-                      "required": false
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "name": "header",
-              "moduleName": "SlaxWeb.CoreComponents",
-              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
-              "line": 315,
-              "attributes": [],
-              "slots": [
-                {
-                  "name": "actions",
-                  "required": false,
-                  "attributes": []
-                },
-                {
-                  "name": "subtitle",
-                  "required": false,
-                  "attributes": []
-                },
-                {
-                  "name": "inner_block",
-                  "required": true,
-                  "attributes": []
-                }
-              ]
-            },
-            {
-              "name": "input",
-              "moduleName": "SlaxWeb.CoreComponents",
-              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
-              "line": 184,
-              "attributes": [
-                {
-                  "name": "rest",
-                  "type": "global",
-                  "required": false,
-                  "rawType": "global"
-                },
-                {
-                  "name": "error_class",
-                  "type": "any",
-                  "required": false,
-                  "default": "nil",
-                  "doc": "the input error class to use over defaults",
-                  "rawType": "any"
+                  "rawType": ":string",
+                  "required": true
                 },
                 {
                   "name": "class",
                   "type": "any",
+                  "rawType": ":any",
                   "required": false,
-                  "default": "nil",
-                  "doc": "the input class to use over defaults",
-                  "rawType": "any"
-                },
-                {
-                  "name": "multiple",
-                  "type": "boolean",
-                  "required": false,
-                  "default": "false",
-                  "doc": "the multiple flag for select inputs",
-                  "rawType": "boolean"
-                },
-                {
-                  "name": "options",
-                  "type": "list",
-                  "required": false,
-                  "doc": "the options to pass to Phoenix.HTML.Form.options_for_select/2",
-                  "rawType": "list"
-                },
-                {
-                  "name": "prompt",
-                  "type": "string",
-                  "required": false,
-                  "default": "nil",
-                  "doc": "the prompt for select inputs",
-                  "rawType": "string"
-                },
-                {
-                  "name": "checked",
-                  "type": "boolean",
-                  "required": false,
-                  "doc": "the checked flag for checkbox inputs",
-                  "rawType": "boolean"
-                },
-                {
-                  "name": "errors",
-                  "type": "list",
-                  "required": false,
-                  "default": "[]",
-                  "rawType": "list"
-                },
-                {
-                  "name": "field",
-                  "type": "{:__aliases__, [last: [line: 169, column: 29], line: 169, column: 16], [:Phoenix, :HTML, :FormField]}",
-                  "required": false,
-                  "doc": "a form field struct retrieved from the form, for example: @form[:email]",
-                  "rawType": "{:__aliases__, [last: [line: 169, column: 29], line: 169, column: 16], [:Phoenix, :HTML, :FormField]}"
-                },
-                {
-                  "name": "type",
-                  "type": "string",
-                  "required": false,
-                  "default": "\"text\"",
-                  "rawType": "string"
-                },
-                {
-                  "name": "value",
-                  "type": "any",
-                  "required": false,
-                  "rawType": "any"
-                },
-                {
-                  "name": "label",
-                  "type": "string",
-                  "required": false,
-                  "default": "nil",
-                  "rawType": "string"
-                },
-                {
-                  "name": "name",
-                  "type": "any",
-                  "required": false,
-                  "rawType": "any"
-                },
-                {
-                  "name": "id",
-                  "type": "any",
-                  "required": false,
-                  "default": "nil",
-                  "rawType": "any"
+                  "default": "\"size-4\""
                 }
               ],
               "slots": []
-            },
-            {
-              "name": "button",
-              "moduleName": "SlaxWeb.CoreComponents",
-              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
-              "line": 96,
-              "attributes": [
-                {
-                  "name": "variant",
-                  "type": "string",
-                  "required": false,
-                  "rawType": "string"
-                },
-                {
-                  "name": "class",
-                  "type": "any",
-                  "required": false,
-                  "rawType": "any"
-                },
-                {
-                  "name": "rest",
-                  "type": "global",
-                  "required": false,
-                  "rawType": "global"
-                }
-              ],
-              "slots": [
-                {
-                  "name": "inner_block",
-                  "required": true,
-                  "attributes": []
-                }
-              ]
-            },
-            {
-              "name": "flash",
-              "moduleName": "SlaxWeb.CoreComponents",
-              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex",
-              "line": 50,
-              "attributes": [
-                {
-                  "name": "rest",
-                  "type": "global",
-                  "required": false,
-                  "doc": "the arbitrary HTML attributes to add to the flash container",
-                  "rawType": "global"
-                },
-                {
-                  "name": "kind",
-                  "type": "atom",
-                  "required": false,
-                  "values": [
-                    "info",
-                    "error"
-                  ],
-                  "doc": "used for styling and flash lookup",
-                  "rawType": "atom"
-                },
-                {
-                  "name": "title",
-                  "type": "string",
-                  "required": false,
-                  "default": "nil",
-                  "rawType": "string"
-                },
-                {
-                  "name": "flash",
-                  "type": "map",
-                  "required": false,
-                  "default": "{:%{}, [closing: [line: 43, column: 33], line: 43, column: 31], []}",
-                  "doc": "the map of flash messages to display",
-                  "rawType": "map"
-                },
-                {
-                  "name": "id",
-                  "type": "string",
-                  "required": false,
-                  "doc": "the optional id of flash container",
-                  "rawType": "string"
-                }
-              ],
-              "slots": [
-                {
-                  "name": "inner_block",
-                  "required": false,
-                  "doc": "the optional inner block that renders the flash message",
-                  "attributes": []
-                }
-              ]
             }
           ]
         ],
@@ -598,57 +536,23 @@
           "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
           [
             {
-              "name": "theme_toggle",
-              "moduleName": "SlaxWeb.Layouts",
-              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
-              "line": 123,
-              "attributes": [],
-              "slots": []
-            },
-            {
-              "name": "flash_group",
-              "moduleName": "SlaxWeb.Layouts",
-              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
-              "line": 85,
-              "attributes": [
-                {
-                  "name": "id",
-                  "type": "string",
-                  "required": false,
-                  "default": "\"flash-group\"",
-                  "doc": "the optional id of flash container",
-                  "rawType": "string"
-                },
-                {
-                  "name": "flash",
-                  "type": "map",
-                  "required": true,
-                  "doc": "the map of flash messages",
-                  "rawType": "map"
-                }
-              ],
-              "slots": []
-            },
-            {
               "name": "app",
               "moduleName": "SlaxWeb.Layouts",
               "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
               "line": 36,
               "attributes": [
                 {
-                  "name": "current_scope",
-                  "type": "map",
-                  "required": false,
-                  "default": "nil",
-                  "doc": "the current [scope](https://hexdocs.pm/phoenix/scopes.html)",
-                  "rawType": "map"
-                },
-                {
                   "name": "flash",
                   "type": "map",
+                  "rawType": ":map",
                   "required": true,
-                  "doc": "the map of flash messages",
-                  "rawType": "map"
+                  "doc": "the map of flash messages"
+                },
+                {
+                  "name": "current_scope",
+                  "type": "map",
+                  "rawType": ":map",
+                  "required": false
                 }
               ],
               "slots": [
@@ -658,6 +562,38 @@
                   "attributes": []
                 }
               ]
+            },
+            {
+              "name": "flash_group",
+              "moduleName": "SlaxWeb.Layouts",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
+              "line": 56,
+              "attributes": [
+                {
+                  "name": "flash",
+                  "type": "map",
+                  "rawType": ":map",
+                  "required": true,
+                  "doc": "the map of flash messages"
+                },
+                {
+                  "name": "id",
+                  "type": "string",
+                  "rawType": ":string",
+                  "required": false,
+                  "default": "\"flash-group\"",
+                  "doc": "the optional id of flash container"
+                }
+              ],
+              "slots": []
+            },
+            {
+              "name": "theme_toggle",
+              "moduleName": "SlaxWeb.Layouts",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex",
+              "line": 94,
+              "attributes": [],
+              "slots": []
             }
           ]
         ],
@@ -672,40 +608,143 @@
       ],
       "fileHashes": {
         "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/core_components.ex": "96552fd71bc1a36e74fd6e45e4f4869a3e6c77ad",
-        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex": "fb1228dce3208587d22cc7136409b5798901af14",
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/components/layouts.ex": "b8ea35f102ac3343d695365b905e47e7fefea978",
         "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/error_html.ex": "14d21a2142f4cc807af88670ac62741c52204ab0",
         "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html.ex": "93ccc21880f492ab876ae4fdf5930d35e105940f"
       },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
     "schemas": {
-      "schemas": [],
-      "schemasByFile": [],
-      "fileHashes": {},
+      "schemas": [
+        [
+          "Slax.Chat.Room",
+          {
+            "moduleName": "Slax.Chat.Room",
+            "tableName": "rooms",
+            "fields": [
+              {
+                "name": "id",
+                "type": "id"
+              },
+              {
+                "name": "name",
+                "type": "string"
+              },
+              {
+                "name": "topic",
+                "type": "string"
+              },
+              {
+                "name": "inserted_at",
+                "type": "naive_datetime"
+              },
+              {
+                "name": "updated_at",
+                "type": "naive_datetime"
+              }
+            ],
+            "associations": {},
+            "associationsDetailed": [],
+            "aliases": {},
+            "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex",
+            "line": 5
+          }
+        ]
+      ],
+      "schemasByFile": [
+        [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex",
+          [
+            {
+              "moduleName": "Slax.Chat.Room",
+              "tableName": "rooms",
+              "fields": [
+                {
+                  "name": "id",
+                  "type": "id"
+                },
+                {
+                  "name": "name",
+                  "type": "string"
+                },
+                {
+                  "name": "topic",
+                  "type": "string"
+                },
+                {
+                  "name": "inserted_at",
+                  "type": "naive_datetime"
+                },
+                {
+                  "name": "updated_at",
+                  "type": "naive_datetime"
+                }
+              ],
+              "associations": {},
+              "associationsDetailed": [],
+              "aliases": {},
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex",
+              "line": 5
+            }
+          ]
+        ]
+      ],
+      "fileHashes": {
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax/chat/room.ex": "4f7cb18663d99546314c7a1905c1d68df044c959"
+      },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
     "events": {
-      "events": [],
-      "fileHashes": {},
+      "events": [
+        [
+          "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+          [
+            {
+              "name": "toggle-topic",
+              "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex",
+              "moduleName": "SlaxWeb.ChatRoomLive",
+              "line": 12,
+              "params": "_params",
+              "kind": "handle_event",
+              "clause": "def handle_event(\"toggle-topic\", _params, socket) do",
+              "nameKind": "string"
+            }
+          ]
+        ]
+      ],
+      "fileHashes": {
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex": "e204ff3f46861f8b0f3a5d9431bf9f996344afc9"
+      },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
     "routes": {
       "routes": [
         {
+          "verb": "LIVE",
           "path": "/",
-          "verb": "GET",
           "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex",
           "line": 20,
+          "liveModule": "ChatRoomLive",
           "helperBase": "root",
           "params": [],
           "isResource": false,
-          "controller": "PageController",
-          "action": "home",
-          "scopePath": "/"
+          "pipeline": "browser"
+        },
+        {
+          "verb": "FORWARD",
+          "path": "/dev/mailbox",
+          "filePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex",
+          "line": 41,
+          "forwardTo": "Plug.Swoosh.MailboxPreview",
+          "helperBase": "mailbox",
+          "params": [],
+          "isResource": false,
+          "pipeline": "browser",
+          "scopePath": "/dev"
         }
       ],
       "fileHashes": {
-        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex": "8650b64a37ed37b2ad237320dfe8350a40fef90c"
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/router.ex": "8f4f816528ada9c013e9b316382b7e4138a5bd96"
       },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     },
@@ -721,6 +760,7 @@
               "templateName": "home",
               "assigns": [],
               "assignsWithTypes": [],
+              "actionBody": "  def home(conn, _params) do\n    render(conn, :home)\n  end",
               "line": 5,
               "templatePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html/home.html.heex"
             }
@@ -741,6 +781,7 @@
                 "templateName": "home",
                 "assigns": [],
                 "assignsWithTypes": [],
+                "actionBody": "  def home(conn, _params) do\n    render(conn, :home)\n  end",
                 "line": 5,
                 "templatePath": "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/controllers/page_html/home.html.heex"
               }
@@ -791,7 +832,9 @@
     },
     "liveview": {
       "liveViews": [],
-      "fileHashes": {},
+      "fileHashes": {
+        "/Users/abhilashdk/Desktop/Projects/elixir/slax/lib/slax_web/live/chat_room_live.ex": "e204ff3f46861f8b0f3a5d9431bf9f996344afc9"
+      },
       "workspaceRoot": "/Users/abhilashdk/Desktop/Projects/elixir/slax"
     }
   },
